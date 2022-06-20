@@ -1,0 +1,15 @@
+http:
+  middlewares:
+
+    tlsredirect:
+      redirectscheme:
+        scheme: https
+        
+    nohsts:
+      headers:
+        isDevelopment: true
+        stsSeconds: 0
+        forceSTSHeader: false
+        stsPreload: false
+        browserXssFilter: false
+        frameDeny: false

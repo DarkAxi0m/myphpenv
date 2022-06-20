@@ -1,0 +1,15 @@
+tls:
+  certificates:
+    - certFile: /etc/certs/host.cert
+      keyFile: /etc/certs/host.key
+      stores:
+        - default
+#  stores:
+#    default:
+#      defaultCertificate:
+#        certFile: /etc/certs/host.cert
+#        keyFile: /etc/certs/host.key
+  options:
+    default:
+      sniStrict: false # set to true for production
+      preferServerCipherSuites: false

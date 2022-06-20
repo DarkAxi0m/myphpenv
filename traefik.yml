@@ -1,0 +1,21 @@
+api:
+  insecure: true
+
+pilot:
+  token: "3fbe8834-c43f-4cc7-9203-ec3cc1041af7"
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+     
+
+providers:
+  file:
+    directory: /yamls
+    watch: true 
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    network: traefik_network
+    exposedbydefault: false

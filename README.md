@@ -1,6 +1,18 @@
 # myphpenv
 Overly Simple Docker PHP development environment 
 
+Conainters for PHP 7.4, 8.0, 8.1. Setup with:
+*7.3 is not currently working*
+
+* traefik
+* composer
+* redis session handleing
+* mysql/mariadb server
+* PDO Drivers
+  * Sqlsrv (MS SQL)
+  * Mysql
+
+
 
 ## Setup
 *lots more to think about here*
@@ -43,4 +55,5 @@ connect to a bash propmt for each php env
 ## TODO
 
 * lots
+* documentation
 * `install` script

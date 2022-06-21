@@ -59,6 +59,7 @@ services:
 
     php-74:
         build: Dockerfile74
+        container_name: myphpenv-php-74
         ports:
             - "8074:80"
         volumes:
@@ -81,6 +82,7 @@ services:
 
     php-80:
         build: Dockerfile80
+        container_name: myphpenv-php-80
         ports:
             - "8080:80"
         volumes:
@@ -103,6 +105,7 @@ services:
 
     php-81:
         build: Dockerfile81
+        container_name: myphpenv-php-81 
         ports:
             - "8081:80"
         volumes:

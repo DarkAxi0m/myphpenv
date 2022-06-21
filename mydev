@@ -1,0 +1,58 @@
+#!/bin/bash
+
+
+cd $( dirname $(realpath "${BASH_SOURCE}") )
+ 
+ 
+case "${1}" in
+	"")         echo "No option was specified."; exit 1 ;;
+	
+    start)     
+    echo Starting Dev...
+
+    docker compose up -d
+    ;;
+    
+    stop)     
+    echo Stopping Dev...
+
+    docker compose stop
+    ;;
+    
+    restart)     
+    echo Restarting Dev...
+
+    docker compose stop
+    docker compose up -d
+    ;;
+    
+    clean)     
+    echo Clean Dev...
+
+    docker compose stop
+    docker compose rm --force
+    ;;
+
+
+    bash74)     
+    echo Connecting to 7.4 with bash
+    docker exec -it --user 1000 myphpenv-php-74 bash
+    ;;
+
+
+    bash80)     
+    echo Connecting to 8.0 with bash
+    docker exec -it --user 1000 myphpenv-php-80 bash
+    ;;
+
+
+    bash81)     
+    echo Connecting to 8.1 with bash
+    docker exec -it --user 1000 myphpenv-php-81 bash
+    ;;
+
+
+    *)          echo "Unknown  '${1}'."; exit 1 ;;
+esac
+
+

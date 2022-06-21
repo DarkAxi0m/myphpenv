@@ -1,7 +1,7 @@
 # myphpenv
 Overly Simple Docker PHP development environment 
 
-Containers for PHP 7.4, 8.0, 8.1. *7.3 is not currently working*
+Containers for PHP 7.4, 8.0, 8.1. *(7.3 is not currently working)*
 
 
 ##Setup with:
@@ -9,6 +9,7 @@ Containers for PHP 7.4, 8.0, 8.1. *7.3 is not currently working*
 * composer
 * redis session handleing
 * mysql/mariadb server
+* opcache can be turned on with an evn var
 * PDO Drivers
   * Sqlsrv (MS SQL)
   * Mysql
@@ -58,3 +59,4 @@ connect to a bash propmt for each php env
 * lots
 * documentation
 * `install` script
+* Changes options to an .env file

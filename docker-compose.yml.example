@@ -36,10 +36,10 @@ services:
             - /var/docker/mysql:/var/lib/mysql
             - /etc/localtime:/etc/localtime:ro
         environment:
-            - MYSQL_ROOT_PASSWORD=Accede23#
+            - MYSQL_ROOT_PASSWORD=XXXXXXX
             - MYSQL_ROOT_HOST=%
-            - MYSQL_PASSWORD=chris
-            - MYSQL_USER=chris
+            - MYSQL_PASSWORD=YYYY
+            - MYSQL_USER=YYYY
         command: --transaction-isolation=READ-COMMITTED --log-bin=ROW --innodb-read-only-compressed=OFF
         ports:
             - "3306:3306"

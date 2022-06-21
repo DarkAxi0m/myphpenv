@@ -1,9 +1,6 @@
 api:
   insecure: true
 
-pilot:
-  token: "3fbe8834-c43f-4cc7-9203-ec3cc1041af7"
-
 entryPoints:
   web:
     address: ":80"

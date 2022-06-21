@@ -1,6 +1,5 @@
 FROM php:7.4.0-apache
 LABEL vendor1="Accede Holdings PTY LTD" \
-      dockerfile.maintainer1="Anthony Morelli <anthony@accede.com.au>" \
       dockerfile.maintainer2="Chris Chase <chris@accede.com.au>" 
 
 WORKDIR '/var/www'

@@ -1,9 +1,10 @@
 # myphpenv
 Overly Simple Docker PHP development environment 
 
-Containers for PHP 7.4, 8.0, 8.1. Setup with:
-*7.3 is not currently working*
+Containers for PHP 7.4, 8.0, 8.1. *7.3 is not currently working*
 
+
+##Setup with:
 * traefik
 * composer
 * redis session handleing

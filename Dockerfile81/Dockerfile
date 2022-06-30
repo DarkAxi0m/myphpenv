@@ -13,9 +13,9 @@ ENV PHP_OPCACHE_MEMORY_CONSUMPTION="192"
 ENV PHP_OPCACHE_MAX_WASTED_PERCENTAGE="10"
 
 ENV DOCKERREDIS=redis
-
-COPY multiarch-support_2.27-3ubuntu1_amd64.deb multiarch-support_2.27-3ubuntu1_amd64.deb
-RUN apt-get install -y ./multiarch-support_2.27-3ubuntu1_amd64.deb
+#https://packages.ubuntu.com/bionic/amd64/multiarch-support/download
+COPY multiarch-support_2.27-3ubuntu1.5_amd64.deb /tmp/multiarch-support.deb
+RUN apt-get install -y /tmp/multiarch-support.deb
 
 RUN apt-get update && apt-get install  -y   \
     vim \
@@ -42,6 +42,8 @@ RUN apt-get update && apt-get install  -y   \
     && docker-php-ext-enable imagick \
     && a2enmod rewrite   
 
+RUN pecl install xdebug
+
 #install SQLSrv PDO Drivers
 RUN curl https://packages.microsoft.com/keys/microsoft.asc |  apt-key add -
 RUN curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list |  tee /etc/apt/sources.list.d/mssql-tools.list
@@ -67,3 +69,4 @@ RUN echo "extension=sqlsrv.so" > $PHP_INI_DIR/conf.d/sqlsrv.ini \
 COPY dockersrc/opcache.ini $PHP_INI_DIR/conf.d/opcache.ini
 COPY dockersrc/docker-php-ext-redis.ini $PHP_INI_DIR/conf.d/docker-php-ext-redis.ini
 
+COPY dockersrc/xdebug.ini $PHP_INI_DIR/conf.d/xdebug.ini

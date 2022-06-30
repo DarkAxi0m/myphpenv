@@ -38,7 +38,9 @@ RUN apt-get update && apt-get install  -y   \
         --with-jpeg \
     && docker-php-ext-install mysqli pdo_mysql && docker-php-ext-enable mysqli pdo_mysql \
     && docker-php-ext-enable imagick \
-    && a2enmod rewrite   
+    && a2enmod rewrite 
+
+RUN pecl install xdebug  
 
 #install SQLSrv PDO Drivers
 RUN curl https://packages.microsoft.com/keys/microsoft.asc |  apt-key add -

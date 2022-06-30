@@ -6,7 +6,12 @@ cd $( dirname $(realpath "${BASH_SOURCE}") )
  
 case "${1}" in
 	"")         echo "No option was specified."; exit 1 ;;
-	
+    build)     
+    echo build Dev...
+
+    docker compose build
+    ;;
+
     start)     
     echo Starting Dev...
 

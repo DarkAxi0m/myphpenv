@@ -67,3 +67,4 @@ RUN echo "extension=sqlsrv.so" > $PHP_INI_DIR/conf.d/sqlsrv.ini \
 COPY dockersrc/opcache.ini $PHP_INI_DIR/conf.d/opcache.ini
 COPY dockersrc/docker-php-ext-redis.ini $PHP_INI_DIR/conf.d/docker-php-ext-redis.ini
 
+COPY dockersrc/xdebug.ini $PHP_INI_DIR/conf.d/xdebug.ini

@@ -1,4 +1,4 @@
-FROM php:8.0.0-apache
+FROM php:8.0.2-apache
 LABEL vendor1="Accede Holdings PTY LTD" \
       dockerfile.maintainer2="Chris Chase <chris@accede.com.au>" 
 
@@ -16,6 +16,15 @@ ENV DOCKERREDIS=redis
 
 
 RUN apt-get update && apt-get install  -y   \
+     gnupg2
+
+
+#source for php8.0-odbc/buster
+RUN echo "deb https://packages.sury.org/php/ buster main" | tee /etc/apt/sources.list.d/sury-php.list
+COPY  dockersrc/apt.gpg /apt.gpg
+RUN apt-key add /apt.gpg
+
+RUN apt-get update && apt-get install  -y   \
     vim \
     git \
     curl \ 
@@ -29,6 +38,7 @@ RUN apt-get update && apt-get install  -y   \
     unixodbc-dev  \
     libicu-dev \
     libpng-dev \
+    php8.0-odbc/buster \
     && curl -sS https://getcomposer.org/installer | php \
     && chmod +x composer.phar && mv composer.phar /usr/local/bin/composer \  
     && pecl install imagick \
@@ -66,5 +76,12 @@ RUN echo "extension=sqlsrv.so" > $PHP_INI_DIR/conf.d/sqlsrv.ini \
  && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 COPY dockersrc/opcache.ini $PHP_INI_DIR/conf.d/opcache.ini
 COPY dockersrc/docker-php-ext-redis.ini $PHP_INI_DIR/conf.d/docker-php-ext-redis.ini
+COPY dockersrc/docker-php-odbc.ini $PHP_INI_DIR/conf.d/docker-php-odbc.ini
+
+
 
 COPY dockersrc/xdebug.ini $PHP_INI_DIR/conf.d/xdebug.ini
+
+#I don't like this, but it works
+RUN  cp /usr/lib/php/20200930/* /usr/local/lib/php/extensions/no-debug-non-zts-20200930/
+

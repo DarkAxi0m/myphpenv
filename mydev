@@ -1,8 +1,25 @@
 #!/bin/bash
 
+# Get the current directory
+current_dir="$(pwd)"
+
+# Define the base directory
+base_dir="/home/chris"
+relative_path=""
+
+# Check if the current directory is a subfolder of the base directory
+if [[ "$current_dir" == "$base_dir"* ]]; then
+  # Extract the path to the right of /home/chris/workbox
+  relative_path="${current_dir#$base_dir}/"
+  relative_path="${relative_path#/}"
+  echo "Relative path: $relative_path"
+fi
+
 
 cd $( dirname $(realpath "${BASH_SOURCE}") )
  
+
+
  
 case "${1}" in
 	"")         echo "No option was specified."; exit 1 ;;
@@ -16,12 +33,14 @@ case "${1}" in
     echo Starting Dev...
 
     docker compose up -d
+    ~/Scripts/done "mydev started"
     ;;
     
     stop)     
     echo Stopping Dev...
 
     docker compose stop
+    ~/Scripts/done "mydev stopped"
     ;;
     
     restart)     
@@ -29,6 +48,7 @@ case "${1}" in
 
     docker compose stop
     docker compose up -d
+    ~/Scripts/done "mydev Restarted"
     ;;
     
     clean)     
@@ -37,23 +57,64 @@ case "${1}" in
     docker compose stop
     docker compose rm --force
     ;;
+    
+    bash70)     
+    echo Connecting to 7.0 with bash
+    docker exec -it --user 1000 myphpenv-php-70 bash -c "cd $relative_path && bash"
 
+    ;;
 
     bash74)     
     echo Connecting to 7.4 with bash
-    docker exec -it --user 1000 myphpenv-php-74 bash
+    docker exec -it --user 1000 myphpenv-php-74 bash -c "cd $relative_path && bash"
+
     ;;
 
 
     bash80)     
     echo Connecting to 8.0 with bash
-    docker exec -it --user 1000 myphpenv-php-80 bash
+    docker exec -it --user 1000 myphpenv-php-80 bash -c "cd $relative_path && bash"
+
     ;;
 
 
     bash81)     
     echo Connecting to 8.1 with bash
-    docker exec -it --user 1000 myphpenv-php-81 bash
+    docker exec -it --user 1000 myphpenv-php-81 bash -c "cd $relative_path && bash"
+    ;;
+
+
+    w74)
+    echo Opening wwwi
+    url=http://w74.localhost/$relative_path
+    if [ -d "$current_dir/public" ]; then
+        url=http://w74.localhost/${relative_path}public
+    fi
+
+    echo $url
+    xdg-open $url 
+    ;;
+
+    w80)
+    echo Opening wwwi
+    url=http://w80.localhost/$relative_path
+    if [ -d "$current_dir/public" ]; then
+        url=http://w80.localhost/${relative_path}public
+    fi
+
+    echo $url
+    xdg-open $url 
+    ;;
+
+    w81)
+    echo Opening wwwi
+    url=http://w81.localhost/$relative_path
+    if [ -d "$current_dir/public" ]; then
+        url=http://w81.localhost/${relative_path}public
+    fi
+
+    echo $url
+    xdg-open $url 
     ;;
 
 

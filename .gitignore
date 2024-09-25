@@ -1,3 +1,4 @@
+heimdall/config/www/logs/
 heimdall/config/log
 docker-compose.yml
 composer

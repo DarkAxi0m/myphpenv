@@ -1,0 +1,609 @@
+[
+    {
+        "id": "4ebe03b7698fbde5",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9a546356b6f1d27d",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "02d02d91a6bcd167"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 560,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "02d02d91a6bcd167",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "d0796cfbc5f32aea",
+        "type": "junction",
+        "z": "4ebe03b7698fbde5",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "b2c54526419bc8c0",
+                "527a80ad5d9b825f"
+            ]
+        ]
+    },
+    {
+        "id": "17b96a1bb1698a49",
+        "type": "junction",
+        "z": "4ebe03b7698fbde5",
+        "x": 660,
+        "y": 80,
+        "wires": [
+            [
+                "c878a500239cdc35",
+                "aaeda580a15ecc51",
+                "8b30258875476af6",
+                "b07cd782d3979327"
+            ]
+        ]
+    },
+    {
+        "id": "36a4dedc413cb3dc",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3308",
+        "db": "automation",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "994d988c929f112c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "fc55ef3159d5d819",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "2e8ad1df16ab8336",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "994d988c929f112c",
+        "order": 1,
+        "disp": false,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "86365a344a37d7e1",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "994d988c929f112c",
+        "order": 2,
+        "disp": false,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "02d02d91a6bcd167",
+        "type": "function",
+        "z": "9a546356b6f1d27d",
+        "name": "function 3",
+        "func": "if (!msg.payload)\n  msg.payload = 'Waiting...'\nelse if(msg.payload.length <= 0) \n  msg.payload = 'No Rows'\n   else\n  msg.payload = msg.payload.length + ' rows'\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "33c6766143f12c74",
+        "type": "mysql",
+        "z": "4ebe03b7698fbde5",
+        "mydb": "36a4dedc413cb3dc",
+        "name": "",
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "c878a500239cdc35",
+                "5064657acfdcbca2"
+            ]
+        ]
+    },
+    {
+        "id": "b2c54526419bc8c0",
+        "type": "template",
+        "z": "4ebe03b7698fbde5",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT\n    *\nFROM\n    automation.logs \nWHERE\n\n   match(salesOrderNumber) AGAINST(:search)\n",
+        "output": "str",
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "33c6766143f12c74"
+            ]
+        ]
+    },
+    {
+        "id": "1a60cf13661eef7f",
+        "type": "mysql",
+        "z": "4ebe03b7698fbde5",
+        "mydb": "36a4dedc413cb3dc",
+        "name": "",
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "aaeda580a15ecc51"
+            ]
+        ]
+    },
+    {
+        "id": "1af39b01e370f14b",
+        "type": "template",
+        "z": "4ebe03b7698fbde5",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT\n    *\nFROM\n    automation.logs \nWHERE\n    CAST(salesOrderNumber AS CHAR)  like :pre\n",
+        "output": "str",
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "1a60cf13661eef7f"
+            ]
+        ]
+    },
+    {
+        "id": "b7b52766e7a1e842",
+        "type": "mysql",
+        "z": "4ebe03b7698fbde5",
+        "mydb": "36a4dedc413cb3dc",
+        "name": "",
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "b07cd782d3979327"
+            ]
+        ]
+    },
+    {
+        "id": "7f5e5355d17ce42d",
+        "type": "template",
+        "z": "4ebe03b7698fbde5",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT\n    *\nFROM\n    automation.logs \nWHERE\n    CAST(salesOrderNumber AS CHAR)  like :post\n",
+        "output": "str",
+        "x": 340,
+        "y": 280,
+        "wires": [
+            [
+                "b7b52766e7a1e842"
+            ]
+        ]
+    },
+    {
+        "id": "c878a500239cdc35",
+        "type": "subflow:9a546356b6f1d27d",
+        "z": "4ebe03b7698fbde5",
+        "name": "",
+        "x": 900,
+        "y": 160,
+        "wires": [
+            [
+                "b84c906931aacf23"
+            ]
+        ]
+    },
+    {
+        "id": "b84c906931aacf23",
+        "type": "ui_text",
+        "z": "4ebe03b7698fbde5",
+        "group": "86365a344a37d7e1",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "name": "",
+        "label": "{{msg.full}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1030,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "aaeda580a15ecc51",
+        "type": "subflow:9a546356b6f1d27d",
+        "z": "4ebe03b7698fbde5",
+        "name": "",
+        "x": 900,
+        "y": 220,
+        "wires": [
+            [
+                "a711efd09b28af56"
+            ]
+        ]
+    },
+    {
+        "id": "a711efd09b28af56",
+        "type": "ui_text",
+        "z": "4ebe03b7698fbde5",
+        "group": "86365a344a37d7e1",
+        "order": 2,
+        "width": "4",
+        "height": "1",
+        "name": "",
+        "label": "{{msg.pre}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1030,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b07cd782d3979327",
+        "type": "subflow:9a546356b6f1d27d",
+        "z": "4ebe03b7698fbde5",
+        "name": "",
+        "x": 900,
+        "y": 280,
+        "wires": [
+            [
+                "4119da894ed90d9e"
+            ]
+        ]
+    },
+    {
+        "id": "4119da894ed90d9e",
+        "type": "ui_text",
+        "z": "4ebe03b7698fbde5",
+        "group": "86365a344a37d7e1",
+        "order": 3,
+        "width": "4",
+        "height": "1",
+        "name": "",
+        "label": "{{msg.post}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1030,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5064657acfdcbca2",
+        "type": "join",
+        "z": "4ebe03b7698fbde5",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "search",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 890,
+        "y": 340,
+        "wires": [
+            [
+                "e6899d37b0b6a757",
+                "02d766ab23d63de2"
+            ]
+        ]
+    },
+    {
+        "id": "6cc14a8de1c1a0e7",
+        "type": "ui_table",
+        "z": "4ebe03b7698fbde5",
+        "group": "86365a344a37d7e1",
+        "name": "",
+        "order": 5,
+        "width": "24",
+        "height": "10",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 1250,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e6899d37b0b6a757",
+        "type": "function",
+        "z": "4ebe03b7698fbde5",
+        "name": "function 1",
+        "func": "const p = msg.payload[0]\nconst uniqueArray = [...new Map(p.map(item => [item.id, item])).values()];\nmsg.payload = uniqueArray\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 360,
+        "wires": [
+            [
+                "6cc14a8de1c1a0e7",
+                "8b30258875476af6"
+            ]
+        ]
+    },
+    {
+        "id": "8b30258875476af6",
+        "type": "subflow:9a546356b6f1d27d",
+        "z": "4ebe03b7698fbde5",
+        "name": "",
+        "x": 900,
+        "y": 420,
+        "wires": [
+            [
+                "12b769f989df3c53"
+            ]
+        ]
+    },
+    {
+        "id": "12b769f989df3c53",
+        "type": "ui_text",
+        "z": "4ebe03b7698fbde5",
+        "group": "86365a344a37d7e1",
+        "order": 4,
+        "width": "4",
+        "height": "1",
+        "name": "",
+        "label": "Total",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1050,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "089e89d70d1612ad",
+        "type": "ui_text_input",
+        "z": "4ebe03b7698fbde5",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "2e8ad1df16ab8336",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "300",
+        "topic": "son",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "5ffbda9ec57efec4"
+            ]
+        ]
+    },
+    {
+        "id": "5ffbda9ec57efec4",
+        "type": "function",
+        "z": "4ebe03b7698fbde5",
+        "name": "function 2",
+        "func": "\nmsg.run = new Date();\n\nmsg.search = msg.payload\nmsg.full= '%' + msg.payload + '%'\nmsg.pre =msg.payload + '%'\nmsg.post = '%' + msg.payload\n\nmsg.payload = {\n    full: msg.full,\n    pre: msg.pre,\n    post: msg.post,\n    search: msg.search,\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "d0796cfbc5f32aea"
+            ]
+        ]
+    },
+    {
+        "id": "527a80ad5d9b825f",
+        "type": "template",
+        "z": "4ebe03b7698fbde5",
+        "name": "Clear",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 350,
+        "y": 80,
+        "wires": [
+            [
+                "17b96a1bb1698a49"
+            ]
+        ]
+    },
+    {
+        "id": "02d766ab23d63de2",
+        "type": "debug",
+        "z": "4ebe03b7698fbde5",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 320,
+        "wires": []
+    }
+]

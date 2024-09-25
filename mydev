@@ -31,7 +31,7 @@ case "${1}" in
 
     start)     
     echo Starting Dev...
-
+    sudo service redis stop
     docker compose up -d
     ~/Scripts/done "mydev started"
     ;;
